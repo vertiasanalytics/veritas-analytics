@@ -1,0 +1,22 @@
+packages:
+  "framer-motion": "For polished layout animations and page transitions"
+  "@hookform/resolvers": "Zod validation for complex calculation forms"
+  "react-hook-form": "Form state management"
+  "zod": "Schema definition for frontend validation"
+  "date-fns": "For formatting Brazilian dates in results"
+  "lucide-react": "Icons for the sidebar and UI"
+  "clsx": "Class merging"
+  "tailwind-merge": "Tailwind class merging"
+
+images:
+  - path: "artifacts/calc-federal/public/images/bg-pattern.png"
+    description: "Subtle abstract geometric background pattern in very dark navy blue with faint glowing gold lines, professional corporate style"
+    aspect_ratio: "16:9"
+  - path: "artifacts/calc-federal/public/images/logo-icon.png"
+    description: "Minimalist modern scales of justice icon in pure gold on transparent background"
+    aspect_ratio: "1:1"
+
+notes:
+  - App relies on @workspace/api-client-react for TanStack Query hooks.
+  - Sidebar layout with complex nested routing.
+  - Follows strict Navy/Gold corporate color scheme for legal software.

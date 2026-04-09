@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Cinzel', serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE — Veritas Analytics Blue Palette */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* Background: light blue-gray */
+  --background: 210 30% 98%;
+  --foreground: 216 70% 10%;
+
+  --border: 213 30% 90%;
+  --input: 213 30% 90%;
+  --ring: 213 80% 52%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 216 70% 10%;
+  --card-border: 213 30% 90%;
+
+  /* Dark Navy Sidebar — matches logo background */
+  --sidebar: 216 70% 10%;
+  --sidebar-foreground: 210 40% 95%;
+  --sidebar-border: 216 55% 16%;
+  --sidebar-primary: 194 88% 62%;
+  --sidebar-primary-foreground: 216 70% 10%;
+  --sidebar-accent: 213 55% 20%;
+  --sidebar-accent-foreground: 210 40% 95%;
+  --sidebar-ring: 194 88% 62%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 216 70% 10%;
+  --popover-border: 213 30% 90%;
+
+  /* Royal Blue — primary action color */
+  --primary: 213 80% 52%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 30% 94%;
+  --secondary-foreground: 216 70% 10%;
+
+  --muted: 210 30% 94%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 213 80% 52%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --radius: 0.5rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  /* Dark Mode — Veritas Navy/Blue */
+  --background: 216 70% 10%;
+  --foreground: 210 40% 95%;
+
+  --border: 216 40% 20%;
+  --input: 216 40% 20%;
+  --ring: 213 80% 60%;
+
+  --card: 216 55% 13%;
+  --card-foreground: 210 40% 95%;
+  --card-border: 216 40% 20%;
+
+  --sidebar: 216 70% 8%;
+  --sidebar-foreground: 210 40% 95%;
+  --sidebar-border: 216 40% 15%;
+  --sidebar-primary: 194 88% 62%;
+  --sidebar-primary-foreground: 216 70% 10%;
+  --sidebar-accent: 213 55% 20%;
+  --sidebar-accent-foreground: 210 40% 95%;
+  --sidebar-ring: 194 88% 62%;
+
+  --popover: 216 55% 13%;
+  --popover-foreground: 210 40% 95%;
+  --popover-border: 216 40% 20%;
+
+  --primary: 213 80% 60%;
+  --primary-foreground: 216 70% 10%;
+
+  --secondary: 216 40% 20%;
+  --secondary-foreground: 210 40% 95%;
+
+  --muted: 216 40% 20%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 213 80% 60%;
+  --accent-foreground: 216 70% 10%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
+
+/* ================================================================
+   VERITAS ANALYTICS — PRINT / PDF LAYOUT
+   Isolates the .veritas-report-document and renders as A4 laudo.
+   All other DOM elements are hidden via visibility trick.
+   ================================================================ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 12mm 12mm 12mm;
+  }
+
+  /* Force colour preservation in browsers */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /*
+   * PRINT ISOLATION STRATEGY
+   * ─────────────────────────────────────────────────────────────
+   * Goal: show ONLY .veritas-report-document on every printed page.
+   *
+   * Step 1 — Unlock all ancestors so their overflow/height constraints
+   *   do NOT clip the absolutely-positioned report.
+   *   The <main> container uses overflow-hidden + min-h-0 which, in a
+   *   browser print context, clips everything below the fold.
+   *   Setting overflow:visible + height:auto on every element removes
+   *   all clipping boxes before the browser paginates.
+   *
+   * Step 2 — Hide everything, then reveal only the report using
+   *   visibility so that layout is preserved (ancestors remain in the
+   *   normal flow, preventing layout collapse that breaks position:absolute).
+   *
+   * Step 3 — Pin the report to the top-left corner of the document
+   *   so it prints starting at page 1, col 1.
+   * ─────────────────────────────────────────────────────────────
+   */
+
+  /* STEP 1 — remove all overflow/height clipping from every element */
+  * {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  html, body {
+    height: auto !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* STEP 2 — hide everything, reveal only the report */
+  body * {
+    visibility: hidden !important;
+  }
+
+  .veritas-report-document,
+  .veritas-report-document * {
+    visibility: visible !important;
+  }
+
+  /* STEP 3 — pin report to document origin so it spans all pages */
+  .veritas-report-document {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  /* Page-break helpers */
+  .vr-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .vr-section-long {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .vr-page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Keep table headers with their first data row */
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Table header dark navy — force render */
+  .vr-table-head {
+    background-color: #1e3a5f !important;
+    color: #ffffff !important;
+  }
+
+  .vr-table-head th {
+    color: #ffffff !important;
+    background-color: #1e3a5f !important;
+  }
+
+  /* Footer pinned to bottom of each printed page */
+  .vr-footer {
+    position: running(footer);
+  }
+}

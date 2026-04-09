@@ -1,0 +1,707 @@
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+ out/64 ORTN                  0,0021659174         5.956.273.072.949,820000000
+ nov/64 ORTN                  0,0021659174         5.956.273.072.949,820000000
+ dez/64 ORTN                  0,0021659174         5.956.273.072.949,820000000
+  jan/65 ORTN                 0,0019167411         5.271.038.117.654,710000000
+  fev/65 ORTN                 0,0019167411         5.271.038.117.654,710000000
+ mar/65 ORTN                  0,0019167411         5.271.038.117.654,710000000
+ abr/65 ORTN                  0,0016163563         4.444.979.905.186,430000000
+ mai/65 ORTN                  0,0016163563         4.444.979.905.186,430000000
+ jun/65 ORTN                  0,0016163563         4.444.979.905.186,430000000
+   jul/65 ORTN                0,0014249457         3.918.600.705.888,040000000
+ ago/65 ORTN                  0,0014249457         3.918.600.705.888,040000000
+ set/65 ORTN                  0,0013795652         3.793.804.505.063,580000000
+ out/65 ORTN                  0,0013622122         3.746.083.693.679,130000000
+ nov/65 ORTN                  0,0013494812         3.711.073.565.700,820000000
+ dez/65 ORTN                  0,0013287837         3.654.155.259.478,420000000
+  jan/66 ORTN                 0,0013047695         3.588.116.309.005,920000000
+  fev/66 ORTN                 0,0012703328         3.493.415.292.052,680000000
+ mar/66 ORTN                  0,0012519754         3.442.932.412.109,720000000
+ abr/66 ORTN                  0,0012306349         3.384.246.064.176,030000000
+ mai/66 ORTN                  0,0011848563         3.258.355.072.729,660000000
+ jun/66 ORTN                  0,0011345822         3.120.101.138.266,010000000
+   jul/66 ORTN                0,0010900440         2.997.621.073.452,350000000
+ ago/66 ORTN                  0,0010601651         2.915.454.269.676,860000000
+ set/66 ORTN                  0,0010308983         2.834.970.524.964,220000000
+ out/66 ORTN                  0,0010022755         2.756.257.784.798,620000000
+ nov/66 ORTN                  0,0009765182         2.685.425.190.689,730000000
+ dez/66 ORTN                  0,0009545691         2.625.065.259.122,880000000
+  jan/67 ORTN                 0,0009323794         2.564.043.509.664,150000000
+  fev/67 ORTN                 0,9108147523
+ mar/67 ORTN                  0,8920582706
+ abr/67 ORTN                  0,8790249517
+ mai/67 ORTN                  0,8660205841
+ jun/67 ORTN                  0,8507138574
+   jul/67 ORTN                0,8273176016
+ ago/67 ORTN                  0,8069737261
+ set/67 ORTN                  0,7948321031
+ out/67 ORTN                  0,7910582472
+ nov/67 ORTN                  0,7856066307
+ dez/67 ORTN                  0,7746485983
+  jan/68 ORTN                 0,7605047335
+  fev/68 ORTN                 0,7473835338
+ mar/68 ORTN                  0,7367066262
+ abr/68 ORTN                  0,7260869866
+ mai/68 ORTN                  0,7127072988
+ jun/68 ORTN                  0,6942043208
+   jul/68 ORTN                0,6749509133
+ ago/68 ORTN                  0,6601394334
+ set/68 ORTN                  0,6482841906
+ out/68 ORTN                  0,6392908739
+ nov/68 ORTN                  0,6298102591
+ dez/68 ORTN                  0,6197188787
+  jan/69 ORTN                 0,6080621788
+  fev/69 ORTN                 0,5971650071
+ mar/69 ORTN                  0,5868104798
+ abr/69 ORTN                  0,5786581568
+ mai/69 ORTN                  0,5698283296
+ jun/69 ORTN                  0,5628683682
+   jul/69 ORTN                0,5553634566
+ ago/69 ORTN                  0,5515450677
+ set/69 ORTN                  0,5475018910
+ out/69 ORTN                  0,5425644992
+ nov/69 ORTN                  0,5338716985
+ dez/69 ORTN                  0,5229158573
+  jan/70 ORTN                 0,5114326991
+  fev/70 ORTN                 0,5002118893
+ mar/70 ORTN                  0,4903594025
+ abr/70 ORTN                  0,4848707143
+ mai/70 ORTN                  0,4804608431
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+ jun/70 ORTN                  0,4760258200
+   jul/70 ORTN                0,4688133075
+ ago/70 ORTN                  0,4646894402
+ set/70 ORTN                  0,4603437791
+ out/70 ORTN                  0,4549291075
+ nov/70 ORTN                  0,4464888643
+ dez/70 ORTN                  0,4372057894
+  jan/71 ORTN                 0,4288096379
+  fev/71 ORTN                 0,4210570530
+ mar/71 ORTN                  0,4155635995
+ abr/71 ORTN                  0,4114584880
+ mai/71 ORTN                  0,4067450668
+ jun/71 ORTN                  0,4010215665
+   jul/71 ORTN                0,3932312057
+ ago/71 ORTN                  0,3855317695
+ set/71 ORTN                  0,3776006766
+ out/71 ORTN                  0,3695474289
+ nov/71 ORTN                  0,3622541363
+ dez/71 ORTN                  0,3564122891
+  jan/72 ORTN                 0,3520672108
+  fev/72 ORTN                 0,3478826664
+ mar/72 ORTN                  0,3433059884
+ abr/72 ORTN                  0,3394322960
+ mai/72 ORTN                  0,3349702259
+ jun/72 ORTN                  0,3294171073
+   jul/72 ORTN                0,3236093651
+ ago/72 ORTN                  0,3190333600
+ set/72 ORTN                  0,3163770787
+ out/72 ORTN                  0,3141287137
+ nov/72 ORTN                  0,3111503348
+ dez/72 ORTN                  0,3091076753
+  jan/73 ORTN                 0,3056183831
+  fev/73 ORTN                 0,3026292414
+ mar/73 ORTN                  0,2994908021
+ abr/73 ORTN                  0,2959307939
+ mai/73 ORTN                  0,2925729408
+ jun/73 ORTN                  0,2889045593
+   jul/73 ORTN                0,2857410924
+ ago/73 ORTN                  0,2832005074
+ set/73 ORTN                  0,2808502957
+ out/73 ORTN                  0,2781453038
+ nov/73 ORTN                  0,2762649848
+ dez/73 ORTN                  0,2739240522
+  jan/74 ORTN                 0,2686575888
+  fev/74 ORTN                 0,2658546067
+ mar/74 ORTN                  0,2619322144
+ abr/74 ORTN                  0,2586787867
+ mai/74 ORTN                  0,2545143926
+ jun/74 ORTN                  0,2492138397
+   jul/74 ORTN                0,2411934834
+ ago/74 ORTN                  0,2310311979
+ set/74 ORTN                  0,2205169498
+ out/74 ORTN                  0,2125532366
+ nov/74 ORTN                  0,2080612373
+ dez/74 ORTN                  0,2054755223
+  jan/75 ORTN                 0,2028772462
+  fev/75 ORTN                 0,1998447574
+ mar/75 ORTN                  0,1965799129
+ abr/75 ORTN                  0,1929547867
+ mai/75 ORTN                  0,1891796210
+ jun/75 ORTN                  0,1849156903
+   jul/75 ORTN                0,1815978436
+ ago/75 ORTN                  0,1785440178
+ set/75 ORTN                  0,1758049903
+ out/75 ORTN                  0,1723084710
+ nov/75 ORTN                  0,1686457588
+ dez/75 ORTN                  0,1654256076
+  jan/76 ORTN                 0,1624356892
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+  fev/76 ORTN                 0,1593758264
+ mar/76 ORTN                  0,1558886915
+ abr/76 ORTN                  0,1522720388
+ mai/76 ORTN                  0,1485234506
+ jun/76 ORTN                  0,1442310368
+   jul/76 ORTN                0,1400981553
+ ago/76 ORTN                  0,1366078512
+ set/76 ORTN                  0,1329028337
+ out/76 ORTN                  0,1286709131
+ nov/76 ORTN                  0,1241925161
+ dez/76 ORTN                  0,1205430476
+  jan/77 ORTN                 0,1179372437
+  fev/77 ORTN                 0,1159298550
+ mar/77 ORTN                  0,1136904876
+ abr/77 ORTN                  0,1111696084
+ mai/77 ORTN                  0,1080527553
+ jun/77 ORTN                  0,1046842668
+   jul/77 ORTN                0,1013057755
+ ago/77 ORTN                  0,0986705608
+ set/77 ORTN                  0,0966884282
+ out/77 ORTN                  0,0953518591
+ nov/77 ORTN                  0,0940476544
+ dez/77 ORTN                  0,0926635355
+  jan/78 ORTN                 0,0908827408
+  fev/78 ORTN                 0,0890042112
+ mar/78 ORTN                  0,0869881312
+ abr/78 ORTN                  0,0848015927
+ mai/78 ORTN                  0,0823950044
+ jun/78 ORTN                  0,0799585602
+   jul/78 ORTN                0,0776203225
+ ago/78 ORTN                  0,0753153029
+ set/78 ORTN                  0,0732793409
+ out/78 ORTN                  0,0714140750
+ nov/78 ORTN                  0,0697580431
+ dez/78 ORTN                  0,0680165017
+  jan/79 ORTN                 0,0662724888
+  fev/79 ORTN                 0,0648090209
+ mar/79 ORTN                  0,0633364763
+ abr/79 ORTN                  0,0617933149
+ mai/79 ORTN                  0,0595621351
+ jun/79 ORTN                  0,0573692186
+   jul/79 ORTN                0,0553928922
+ ago/79 ORTN                  0,0540519947
+ set/79 ORTN                  0,0525402067
+ out/79 ORTN                  0,0505111352
+ nov/79 ORTN                  0,0482957049
+ dez/79 ORTN                  0,0462101828
+  jan/80 ORTN                 0,0443990218
+  fev/80 ORTN                 0,0426084921
+ mar/80 ORTN                  0,0410880881
+ abr/80 ORTN                  0,0396223745
+ mai/80 ORTN                  0,0382090371
+ jun/80 ORTN                  0,0369528514
+   jul/80 ORTN                0,0358067992
+ ago/80 ORTN                  0,0346963152
+ set/80 ORTN                  0,0336202517
+ out/80 ORTN                  0,0326408686
+ nov/80 ORTN                  0,0316289297
+ dez/80 ORTN                  0,0306483299
+  jan/81 ORTN                 0,0293286050
+  fev/81 ORTN                 0,0279318246
+ mar/81 ORTN                  0,0262271591
+ abr/81 ORTN                  0,0246726981
+ mai/81 ORTN                  0,0232761703
+ jun/81 ORTN                  0,0219586913
+   jul/81 ORTN                0,0207157782
+ ago/81 ORTN                  0,0195432293
+ set/81 ORTN                  0,0184718560
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+ out/81 ORTN                  0,0174756733
+ nov/81 ORTN                  0,0165332163
+ dez/81 ORTN                  0,0156713201
+  jan/82 ORTN                 0,0148966785
+  fev/82 ORTN                 0,0141872943
+ mar/82 ORTN                  0,0135117342
+ abr/82 ORTN                  0,0128683144
+ mai/82 ORTN                  0,0121974730
+ jun/82 ORTN                  0,0115616107
+   jul/82 ORTN                0,0109588470
+ ago/82 ORTN                  0,0103385576
+ set/82 ORTN                  0,0096622003
+ out/82 ORTN                  0,0090301118
+ nov/82 ORTN                  0,0084393519
+ dez/82 ORTN                  0,0079242719
+  jan/83 ORTN                 0,0074406374
+  fev/83 ORTN                 0,0070194597
+ mar/83 ORTN                  0,0065786967
+ abr/83 ORTN                  0,0060354995
+ mai/83 ORTN                  0,0055371508
+ jun/83 ORTN                  0,0051269901
+   jul/83 ORTN                0,0047560248
+ ago/83 ORTN                  0,0043633294
+ set/83 ORTN                  0,0040215035
+ out/83 ORTN                  0,0036726089
+ nov/83 ORTN                  0,0033478641
+ dez/83 ORTN                  0,0030884365
+  jan/84 ORTN                 0,0028702931
+  fev/84 ORTN                 0,0026141091
+ mar/84 ORTN                  0,0023277896
+ abr/84 ORTN                  0,0021161726
+ mai/84 ORTN                  0,0019432257
+ jun/84 ORTN                  0,0017844134
+   jul/84 ORTN                0,0016340787
+ ago/84 ORTN                  0,0014814858
+ set/84 ORTN                  0,0013394989
+ out/84 ORTN                  0,0012122446
+ nov/84 ORTN                  0,0010765687
+ dez/84 ORTN                  0,0009795895
+  jan/85 ORTN                 0,0008865062
+  fev/85 ORTN                 0,0007873057
+ mar/85 ORTN                  0,0007144335
+ abr/85 ORTN                  0,0006339251
+ mai/85 ORTN                  0,0005668685
+ jun/85 ORTN                  0,0005153074
+   jul/85 ORTN                0,0004718578
+ ago/85 ORTN                  0,0004384725
+ set/85 ORTN                  0,0004053186
+ out/85 ORTN                  0,0003715111
+ nov/85 ORTN                  0,0003408359
+ dez/85 ORTN                  0,0003067277
+  jan/86 ORTN                 0,0002705784
+  fev/86 ORTN                 0,0002327957
+ mar/86 OTN                   0,2035636730
+ abr/86 OTN                   0,2035636730
+ mai/86 OTN                   0,2035636730
+ jun/86 OTN                   0,2035636730
+   jul/86 OTN                 0,2035636730
+ ago/86 OTN                   0,2035636730
+ set/86 OTN                   0,2035636730
+ out/86 OTN                   0,2035636730
+ nov/86 OTN                   0,2035636730
+ dez/86 OTN                   0,2035636730
+  jan/87 OTN                  0,2035636730
+  fev/87 OTN                  0,2035636730
+ mar/87 OTN                   0,1192620164
+ abr/87 OTN                   0,1041456691
+ mai/87 OTN                   0,0860994387
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+ jun/87 OTN                   0,0697490574
+   jul/87 OTN                 0,0590989517
+ ago/87 OTN                   0,0573494712
+ set/87 OTN                   0,0539201245
+ out/87 OTN                   0,0510215891
+ nov/87 OTN                   0,0467316277
+ dez/87 OTN                   0,0414141280
+  jan/88 OTN                  0,0362836714
+  fev/88 OTN                  0,0311418760
+ mar/88 OTN                   0,0264001058
+ abr/88 OTN                   0,0227567319
+ mai/88 OTN                   0,0190784349
+ jun/88 OTN                   0,0161983777
+   jul/88 OTN                 0,0135517217
+ ago/88 OTN                   0,0109252929
+ set/88 OTN                   0,0090546118
+ out/88 OTN                   0,0073015263
+ nov/88 OTN                   0,0057379401
+ dez/88 OTN                   0,0045209083
+  jan/89 OTN                  3,5102930073
+  fev/89 BTN                  3,5102930073
+ mar/89 BTN                   3,3883137136
+ abr/89 BTN                   3,1937885609
+ mai/89 BTN                   2,9763379746
+ jun/89 BTN                   2,7073060367
+   jul/89 BTN                 2,1687217393
+ ago/89 BTN                   1,6843208134
+ set/89 BTN                   1,3022306749
+ out/89 BTN                   0,9578664030
+ nov/89 BTN                   0,6960171724
+ dez/89 BTN                   0,4921615455
+  jan/90 BTN                  0,3205220153
+  fev/90 BTN                  0,2053187150
+ mar/90 BTN                   0,1188322576
+ abr/90 BTN                   0,0841111086
+ mai/90 BTN                   0,0841111086
+ jun/90 BTN                   0,0798169367
+   jul/90 BTN                 0,0728190443
+ ago/90 BTN                   0,0657270851
+ set/90 BTN                   0,0594384635
+ out/90 BTN                   0,0526703278
+ nov/90 BTN                   0,0463198947
+ dez/90 BTN                   0,0397118473
+  jan/91 BTN                  0,0332622944
+  fev/91 BTN                  0,0276701474
+ mar/91 INPC                  0,0230200960
+ abr/91 INPC                  0,0205922747
+ mai/91 INPC                  0,0196098305
+ jun/91 INPC                  0,0183819235
+   jul/91 INPC                0,0165856965
+ ago/91 INPC                  0,0147901698
+ set/91 INPC                  0,0127920535
+ out/91 INPC                  0,0110638780
+ nov/91 INPC                  0,0091376615
+ dez/91 INPC                  0,0072245911
+  jan/92 UFIR                 0,0058792969
+  fev/92 UFIR                 0,0046809523
+ mar/92 UFIR                  0,0037120817
+ abr/92 UFIR                  0,0030419538
+ mai/92 UFIR                  0,0025385582
+ jun/92 UFIR                  0,0020563504
+   jul/92 UFIR                0,0016681682
+ ago/92 UFIR                  0,0013785370
+ set/92 UFIR                  0,0011194892
+ out/92 UFIR                  0,0009077185
+ nov/92 UFIR                  0,0007233973
+ dez/92 UFIR                  0,0005848002
+  jan/93 UFIR                 0,0004735607
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data          Index.       Coef. em REAL
+  fev/93 UFIR                 0,0003657686
+ mar/93 UFIR                  0,0002886431
+ abr/93 UFIR                  0,0002291545
+ mai/93 UFIR                  0,0001799548
+ jun/93 UFIR                  0,0001397056
+   jul/93 UFIR                0,0001071855
+ ago/93 UFIR                  0,0820353588
+ set/93 UFIR                  0,0621510801
+ out/93 UFIR                  0,0462489197
+ nov/93 UFIR                  0,0342167171
+ dez/93 UFIR                  0,0255535634
+  jan/94 UFIR                 0,0186946424
+  fev/94 UFIR                 0,0134329290
+ mar/94 UFIR                  0,0096156604
+ abr/94 UFIR                  0,0066946885
+ mai/94 UFIR                  0,0047396041
+ jun/94 UFIR                  0,0032866065
+   jul/94 UFIR                6,2482965590
+ ago/94 UFIR                  5,9385772410
+ set/94 UFIR                  5,6553778110
+ out/94 UFIR                  5,5648272150
+ nov/94 UFIR                  5,4609412060
+ dez/94 UFIR                  5,3041598780
+  jan/95 UFIR                 5,1873695980
+  fev/95 UFIR                 5,1873695980
+ mar/95 UFIR                  5,1873695980
+ abr/95 UFIR                  4,9713822500
+ mai/95 UFIR                  4,9713822500
+ jun/95 UFIR                  4,9713822500
+   jul/95 UFIR                4,6407892740
+ ago/95 UFIR                  4,6407892740
+ set/95 UFIR                  4,6407892740
+ out/95 UFIR                  4,4143523730
+ nov/95 UFIR                  4,4143523730
+ dez/95 UFIR                  4,4143523730
+  jan/96 UFIR                 4,2359032300
+  fev/96 UFIR                 4,2359032300
+ mar/96 UFIR                  4,2359032300
+ abr/96 UFIR                  4,2359032300
+ mai/96 UFIR                  4,2359032300
+ jun/96 UFIR                  4,2359032300
+   jul/96 UFIR                3,9677777860
+ ago/96 UFIR                  3,9677777860
+ set/96 UFIR                  3,9677777860
+ out/96 UFIR                  3,9677777860
+ nov/96 UFIR                  3,9677777860
+ dez/96 UFIR                  3,9677777860
+  jan/97 UFIR                 3,8540766430
+  fev/97 UFIR                 3,8540766430
+ mar/97 UFIR                  3,8540766430
+ abr/97 UFIR                  3,8540766430
+ mai/97 UFIR                  3,8540766430
+ jun/97 UFIR                  3,8540766430
+   jul/97 UFIR                3,8540766430
+ ago/97 UFIR                  3,8540766430
+ set/97 UFIR                  3,8540766430
+ out/97 UFIR                  3,8540766430
+ nov/97 UFIR                  3,8540766430
+ dez/97 UFIR                  3,8540766430
+  jan/98 UFIR                 3,6523702080
+  fev/98 UFIR                 3,6523702080
+ mar/98 UFIR                  3,6523702080
+ abr/98 UFIR                  3,6523702080
+ mai/98 UFIR                  3,6523702080
+ jun/98 UFIR                  3,6523702080
+   jul/98 UFIR                3,6523702080
+ ago/98 UFIR                  3,6523702080
+ set/98 UFIR                  3,6523702080
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data           Index.       Coef. em REAL
+ out/98 UFIR                   3,6523702080
+ nov/98 UFIR                   3,6523702080
+ dez/98 UFIR                   3,6523702080
+  jan/99 UFIR                  3,5929304060
+  fev/99 UFIR                  3,5929304060
+ mar/99 UFIR                   3,5929304060
+ abr/99 UFIR                   3,5929304060
+ mai/99 UFIR                   3,5929304060
+ jun/99 UFIR                   3,5929304060
+   jul/99 UFIR                 3,5929304060
+ ago/99 UFIR                   3,5929304060
+ set/99 UFIR                   3,5929304060
+ out/99 UFIR                   3,5929304060
+ nov/99 UFIR                   3,5929304060
+ dez/99 UFIR                   3,5929304060
+  jan/00 UFIR                  3,2988375220
+  fev/00 UFIR                  3,2988375220
+ mar/00 UFIR                   3,2988375220
+ abr/00 UFIR                   3,2988375220
+ mai/00 UFIR                   3,2988375220
+ jun/00 UFIR                   3,2988375220
+   jul/00 UFIR                 3,2988375220
+ ago/00 UFIR                   3,2988375220
+ set/00 UFIR                   3,2988375220
+ out/00 UFIR                   3,2988375220
+ nov/00 UFIR                   3,2988375220
+ dez/00 UFIR                   3,2988375220
+  jan/01 IPCA-E 01a12/2000     3,1109369310
+  fev/01 IPCA-E                3,0914607280
+ mar/01 IPCA-E                 3,0760803270
+ abr/01 IPCA-E                 3,0650461610
+ mai/01 IPCA-E                 3,0497971750
+ jun/01 IPCA-E                 3,0349260370
+   jul/01 IPCA-E               3,0234369770
+ ago/01 IPCA-E                 2,9952813320
+ set/01 IPCA-E                 2,9603492110
+ out/01 IPCA-E                 2,9491424700
+ nov/01 IPCA-E                 2,9382708680
+ dez/01 IPCA-E                 2,9094671430
+  jan/02 IPCA-E                2,8935526040
+  fev/02 IPCA-E                2,8757231200
+ mar/02 IPCA-E                 2,8631253690
+ abr/02 IPCA-E                 2,8517184950
+ mai/02 IPCA-E                 2,8296472460
+ jun/02 IPCA-E                 2,8178124340
+   jul/02 IPCA-E               2,8085442380
+ ago/02 IPCA-E                 2,7870836940
+ set/02 IPCA-E                 2,7594888060
+ out/02 IPCA-E                 2,7424853960
+ nov/02 IPCA-E                 2,7180231870
+ dez/02 IPCA-E                 2,6626402700
+  jan/03 IPCA-E                2,5838333520
+  fev/03 IPCA-E                2,5336667510
+ mar/03 IPCA-E                 2,4793685790
+ abr/03 IPCA-E                 2,4514223640
+ mai/03 IPCA-E                 2,4237911450
+ jun/03 IPCA-E                 2,4033625630
+   jul/03 IPCA-E               2,3980867720        -0,18
+ ago/03 IPCA-E                 2,4024033280
+ set/03 IPCA-E                 2,3959343060
+ out/03 IPCA-E                 2,3823548830
+ nov/03 IPCA-E                 2,3667344360
+ dez/03 IPCA-E                 2,3627178150
+  jan/04 IPCA-E                2,3518990800
+  fev/04 IPCA-E                2,3360141830
+ mar/04 IPCA-E                 2,3151775850
+ abr/04 IPCA-E                 2,3059537700
+ mai/04 IPCA-E                 2,3011214150
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data           Index.      Coef. em REAL
+ jun/04 IPCA-E                2,2887621000
+   jul/04 IPCA-E              2,2760164080
+ ago/04 IPCA-E                2,2550444940
+ set/04 IPCA-E                2,2373692770
+ out/04 IPCA-E                2,2264596240
+ nov/04 IPCA-E                2,2193576800
+ dez/04 IPCA-E                2,2054632610
+  jan/05 IPCA-E               2,1870916910
+  fev/05 IPCA-E               2,1723199160
+ mar/05 IPCA-E                2,1563628310
+ abr/05 IPCA-E                2,1488418840
+ mai/05 IPCA-E                2,1330572600
+ jun/05 IPCA-E                2,1154986220
+   jul/05 IPCA-E              2,1129630660
+ ago/05 IPCA-E                2,1106413610
+ set/05 IPCA-E                2,1047480660
+ out/05 IPCA-E                2,1013858490
+ nov/05 IPCA-E                2,0896836200
+ dez/05 IPCA-E                2,0735102400
+  jan/06 IPCA-E               2,0656607300
+  fev/06 IPCA-E               2,0551793150
+ mar/06 IPCA-E                2,0445476670
+ abr/06 IPCA-E                2,0370107280
+ mai/06 IPCA-E                2,0335536860
+ jun/06 IPCA-E                2,0280778760         -0,15
+   jul/06 IPCA-E              2,0311199930         -0,02
+ ago/06 IPCA-E                2,0315262170
+ set/06 IPCA-E                2,0276736370
+ out/06 IPCA-E                2,0266603070
+ nov/06 IPCA-E                2,0207999870
+ dez/06 IPCA-E                2,0133505900
+  jan/07 IPCA-E               2,0063284400
+  fev/07 IPCA-E               1,9959495030
+ mar/07 IPCA-E                1,9868101760
+ abr/07 IPCA-E                1,9786975160
+ mai/07 IPCA-E                1,9743539370
+ jun/07 IPCA-E                1,9692339290
+   jul/07 IPCA-E              1,9635396640
+ ago/07 IPCA-E                1,9588384520
+ set/07 IPCA-E                1,9506457400
+ out/07 IPCA-E                1,9450052250
+ nov/07 IPCA-E                1,9403483890
+ dez/07 IPCA-E                1,9358958280
+  jan/08 IPCA-E               1,9224387570
+  fev/08 IPCA-E               1,9090752300
+ mar/08 IPCA-E                1,8969348470
+ abr/08 IPCA-E                1,8925819090
+ mai/08 IPCA-E                1,8814811700
+ jun/08 IPCA-E                1,8710035500
+   jul/08 IPCA-E              1,8543147180
+ ago/08 IPCA-E                1,8427056720
+ set/08 IPCA-E                1,8362786960
+ out/08 IPCA-E                1,8315167530
+ nov/08 IPCA-E                1,8260386370
+ dez/08 IPCA-E                1,8171346770
+  jan/09 IPCA-E               1,8118802240
+  fev/09 IPCA-E               1,8046615780
+ mar/09 IPCA-E                1,7933633890
+ abr/09 IPCA-E                1,7913928570
+ mai/09 IPCA-E                1,7849669750
+ jun/09 IPCA-E                1,7744974400
+   jul/09 IPCA-E              1,7677798770
+ ago/09 IPCA-E                1,7638992980
+ set/09 IPCA-E                1,7598516400
+ out/09 IPCA-E                1,7565142630
+ nov/09 IPCA-E                1,7533582180
+ dez/09 IPCA-E                1,7456772380
+  jan/10 IPCA-E               1,7390687770
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data           Index.      Coef. em REAL
+  fev/10 IPCA-E               1,7300724000
+ mar/10 IPCA-E                1,7139611650
+ abr/10 IPCA-E                1,7045859430
+ mai/10 IPCA-E                1,6964430160
+ jun/10 IPCA-E                1,6858223350
+   jul/10 IPCA-E              1,6826253470
+ ago/10 IPCA-E                1,6841397100
+ set/10 IPCA-E                1,6849817800
+ out/10 IPCA-E                1,6797744790
+ nov/10 IPCA-E                1,6694240500
+ dez/10 IPCA-E                1,6551894210
+  jan/11 IPCA-E               1,6438468770
+  fev/11 IPCA-E               1,6314478730
+ mar/11 IPCA-E                1,6157748570
+ abr/11 IPCA-E                1,6061380290
+ mai/11 IPCA-E                1,5938652670
+ jun/11 IPCA-E                1,5827857660
+   jul/11 IPCA-E              1,5791537130
+ ago/11 IPCA-E                1,5775761370
+ set/11 IPCA-E                1,5733281510
+ out/11 IPCA-E                1,5650334730
+ nov/11 IPCA-E                1,5584878240
+ dez/11 IPCA-E                1,5513516070
+  jan/12 IPCA-E               1,5427124170
+  fev/12 IPCA-E               1,5327495450
+ mar/12 IPCA-E                1,5246688010
+ abr/12 IPCA-E                1,5208666340
+ mai/12 IPCA-E                1,5143549080
+ jun/12 IPCA-E                1,5066708860
+   jul/12 IPCA-E              1,5039637520
+ ago/12 IPCA-E                1,4990169960
+ set/12 IPCA-E                1,4931935410
+ out/12 IPCA-E                1,4860604510
+ nov/12 IPCA-E                1,4764634380
+ dez/12 IPCA-E                1,4685333580
+  jan/13 IPCA-E               1,4584699160
+  fev/13 IPCA-E               1,4457473390
+ mar/13 IPCA-E                1,4359826570
+ abr/13 IPCA-E                1,4289806520
+ mai/13 IPCA-E                1,4217298300
+ jun/13 IPCA-E                1,4152198190
+   jul/13 IPCA-E              1,4098623420
+ ago/13 IPCA-E                1,4088761280
+ set/13 IPCA-E                1,4066255280
+ out/13 IPCA-E                1,4028378650
+ nov/13 IPCA-E                1,3961364110
+ dez/13 IPCA-E                1,3882235360
+  jan/14 IPCA-E               1,3778893660
+  fev/14 IPCA-E               1,3687189490
+ mar/14 IPCA-E                1,3592045180
+ abr/14 IPCA-E                1,3493542320
+ mai/14 IPCA-E                1,3389107280
+ jun/14 IPCA-E                1,3311898270
+   jul/14 IPCA-E              1,3249625030
+ ago/14 IPCA-E                1,3227138900
+ set/14 IPCA-E                1,3208646790
+ out/14 IPCA-E                1,3157333190
+ nov/14 IPCA-E                1,3094479690
+ dez/14 IPCA-E                1,3044909030
+  jan/15 IPCA-E               1,2942662000
+  fev/15 IPCA-E               1,2828488460
+ mar/15 IPCA-E                1,2660109010
+ abr/15 IPCA-E                1,2505046430
+ mai/15 IPCA-E                1,2372658980
+ jun/15 IPCA-E                1,2298865790
+   jul/15 IPCA-E              1,2178300610
+ ago/15 IPCA-E                1,2106870080
+ set/15 IPCA-E                1,2055033430
+bela de Índices Mensais (ORTN/OTN/BTN/INPC/UFIR)
+
+ Data           Index.            Coef. em REAL
+ out/15 IPCA-E                      1,2008201450
+ nov/15 IPCA-E                      1,1929466960
+ dez/15 IPCA-E                      1,1828921130
+  jan/16 IPCA-E                     1,1690967720
+  fev/16 IPCA-E                     1,1584391320
+ mar/16 IPCA-E                      1,1422196130
+ abr/16 IPCA-E                      1,1373290980
+ mai/16 IPCA-E                      1,1315581510
+ jun/16 IPCA-E                      1,1219097280
+   jul/16 IPCA-E                    1,1174399680
+ ago/16 IPCA-E                      1,1114382010
+ set/16 IPCA-E                      1,1064591350
+ out/16 IPCA-E                      1,1039201190
+ nov/16 IPCA-E                      1,1018266480
+ dez/16 IPCA-E                      1,0989693280
+  jan/17 IPCA-E                     1,0968852460
+  fev/17 IPCA-E                     1,0934954100
+ mar/17 IPCA-E                      1,0876222500
+ abr/17 IPCA-E                      1,0859932600
+ mai/17 IPCA-E                      1,0837174540
+ jun/17 IPCA-E                      1,0811227590
+   jul/17 IPCA-E                    1,0793957260
+ ago/17 IPCA-E                      1,0813386380
+ set/17 IPCA-E                      1,0775671530
+ out/17 IPCA-E                      1,0763831320
+ nov/17 IPCA-E                      1,0727358300
+ dez/17 IPCA-E                      1,0693140250
+  jan/18 IPCA-E                     1,0655844790
+  fev/18 IPCA-E                     1,0614448450
+ mar/18 IPCA-E                      1,0574266230
+ abr/18 IPCA-E                      1,0563702530
+ mai/18 IPCA-E                      1,0541565240
+ jun/18 IPCA-E                      1,0526827690
+   jul/18 IPCA-E                    1,0411262670
+ ago/18 IPCA-E                      1,0345054320
+ set/18 IPCA-E                      1,0331623210
+ out/18 IPCA-E                      1,0322333110
+ nov/18 IPCA-E                      1,0262808820
+ dez/18 IPCA-E                      1,0243346460
+  jan/19 IPCA-E                     1,0259735820
+  fev/19 IPCA-E                     1,0229048670
+ mar/19 IPCA-E                      1,0194387750
+ abr/19 IPCA-E                      1,0139633730
+ mai/19 IPCA-E                      1,0067150250
+ jun/19 IPCA-E                      1,0032038110
+   jul/19 IPCA-E                    1,0026022500
+ ago/19 IPCA-E                      1,0017007200
+ set/19 IPCA-E                      1,0009000000
+ out/19 IPCA-E                      1,0000000000
+ nov/19 IPCA-E                       #DIV/0!
+ dez/19 IPCA-E                       #DIV/0!
+
+
+
+Base p/c                 out/19
+
+Obs:
+a) Foi utilizado o INPC de 03/91 a 12/91, ou seja, INPC de 02/91 a 11/91 com reflexos nos meses posteriores;
+b) Não foi utilizado o INPC de 12/91, com reflexo em 01/92, pois, conforme art. 2º, § 1º, alínea a, da Lei 8.383/91,
+   sobre o valor nominal da UFIR em 01/92, de Cr$ 597,06, já está incluso o INPC de 02/91 a 11/91 + IPCA de 12/91.
+   Assim, se incluíssemos o INPC de 12/91 (com reflexos em 01/92), estaríamos computando em duplicidade a infla-
+   ção de 12/91.
+c) Diante do exposto, atualizamos o BTN pela variação do INPC de 03/91 a 12/91, e, a partir de 01/92 foi fixada a
+   UFIR no valor de Cr$ 597,06.
+
