@@ -1,0 +1,1472 @@
+openapi: 3.1.0
+info:
+  title: JurisCalc Pro API
+  version: 2.0.0
+  description: JurisCalc Pro — Plataforma de Cálculos Judiciais Federais
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: cases
+    description: Casos de cálculo judicial (entidade principal)
+  - name: parties
+    description: Partes e parcelas de um caso
+  - name: criteria
+    description: Critérios monetários e regras de juros
+  - name: indexes
+    description: Índices econômicos oficiais
+  - name: calculations
+    description: Cálculos legados
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  # ============================================================
+  # CASES — Entidade principal
+  # ============================================================
+
+  /cases:
+    post:
+      operationId: createCase
+      tags: [cases]
+      summary: Criar novo caso de cálculo
+      responses:
+        "201":
+          description: Caso criado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateCaseResponse"
+        "500":
+          $ref: "#/components/responses/Error"
+
+    get:
+      operationId: listCases
+      tags: [cases]
+      summary: Listar casos
+      responses:
+        "200":
+          description: Lista de casos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CaseListResponse"
+
+  /cases/recover/{publicKey}:
+    get:
+      operationId: recoverCase
+      tags: [cases]
+      summary: Recuperar caso por chave pública
+      parameters:
+        - name: publicKey
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Caso encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CaseFull"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /cases/{id}:
+    get:
+      operationId: getCase
+      tags: [cases]
+      summary: Obter caso completo por ID
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Caso encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CaseFull"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /cases/{id}/process-data:
+    put:
+      operationId: upsertProcessData
+      tags: [cases]
+      summary: Salvar dados do processo (Aba 1)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessDataInput"
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+        "500":
+          $ref: "#/components/responses/Error"
+
+  /cases/{id}/monetary-config:
+    put:
+      operationId: upsertMonetaryConfig
+      tags: [cases]
+      summary: Salvar configuração de correção monetária (Aba 2)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MonetaryConfigInput"
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/interest-config:
+    put:
+      operationId: upsertInterestConfig
+      tags: [cases]
+      summary: Salvar configuração de juros moratórios (Aba 3)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InterestConfigInput"
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/fees:
+    put:
+      operationId: upsertFees
+      tags: [cases]
+      summary: Salvar honorários advocatícios (Aba 5)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FeesInput"
+      responses:
+        "200":
+          description: Honorários salvos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fees:
+                    $ref: "#/components/schemas/Fees"
+
+  /cases/{id}/final-metadata:
+    put:
+      operationId: upsertFinalMetadata
+      tags: [cases]
+      summary: Salvar dados finais (Aba 7)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FinalMetadataInput"
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/compute:
+    post:
+      operationId: computeCase
+      tags: [cases]
+      summary: Executar cálculo completo do caso
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Cálculo executado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ComputeResult"
+        "400":
+          $ref: "#/components/responses/Error"
+
+  /cases/{id}/report:
+    post:
+      operationId: generateCaseReport
+      tags: [cases]
+      summary: Gerar relatório HTML do caso
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Relatório gerado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CaseReportResponse"
+
+  # ============================================================
+  # PARTIES — Partes (Aba 4)
+  # ============================================================
+
+  /cases/{id}/parties:
+    get:
+      operationId: listParties
+      tags: [parties]
+      summary: Listar partes do caso
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Lista de partes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartyListResponse"
+
+    post:
+      operationId: createParty
+      tags: [parties]
+      summary: Criar nova parte no caso
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PartyInput"
+      responses:
+        "201":
+          description: Parte criada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartyResponse"
+
+  /cases/{id}/parties/{partyId}:
+    put:
+      operationId: updateParty
+      tags: [parties]
+      summary: Atualizar parte
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PartyInput"
+      responses:
+        "200":
+          description: Parte atualizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartyResponse"
+
+    delete:
+      operationId: deleteParty
+      tags: [parties]
+      summary: Remover parte
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/parties/{partyId}/installments:
+    get:
+      operationId: listInstallments
+      tags: [parties]
+      summary: Listar parcelas da parte
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      responses:
+        "200":
+          description: Lista de parcelas
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstallmentListResponse"
+
+    post:
+      operationId: createInstallments
+      tags: [parties]
+      summary: Criar parcelas (individual ou lote)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateInstallmentsInput"
+      responses:
+        "201":
+          description: Parcelas criadas
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstallmentListResponse"
+
+  /cases/{id}/parties/{partyId}/installments/paste:
+    post:
+      operationId: pasteInstallments
+      tags: [parties]
+      summary: Inserir parcelas coladas de planilha
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text:
+                  type: string
+                  description: Texto colado da planilha (TSV/CSV)
+      responses:
+        "201":
+          description: Parcelas inseridas
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstallmentListResponse"
+
+  /cases/{id}/parties/{partyId}/installments/{instId}:
+    put:
+      operationId: updateInstallment
+      tags: [parties]
+      summary: Atualizar parcela
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+        - name: instId
+          in: path
+          required: true
+          schema:
+            type: number
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InstallmentInput"
+      responses:
+        "200":
+          description: Parcela atualizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstallmentResponse"
+
+    delete:
+      operationId: deleteInstallment
+      tags: [parties]
+      summary: Remover parcela
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+        - name: instId
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/parties/{partyId}/discounts:
+    get:
+      operationId: listDiscounts
+      tags: [parties]
+      summary: Listar descontos da parte
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      responses:
+        "200":
+          description: Lista de descontos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DiscountListResponse"
+
+    post:
+      operationId: createDiscount
+      tags: [parties]
+      summary: Criar desconto
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DiscountInput"
+      responses:
+        "201":
+          description: Desconto criado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DiscountResponse"
+
+  /cases/{id}/parties/{partyId}/discounts/{discId}:
+    delete:
+      operationId: deleteDiscount
+      tags: [parties]
+      summary: Remover desconto
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/PartyId"
+        - name: discId
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  /cases/{id}/succumbencies:
+    get:
+      operationId: listSuccumbencies
+      tags: [cases]
+      summary: Listar outras sucumbências (Aba 6)
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Lista de sucumbências
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccumbencyListResponse"
+
+    post:
+      operationId: createSuccumbency
+      tags: [cases]
+      summary: Criar sucumbência
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SuccumbencyInput"
+      responses:
+        "201":
+          description: Sucumbência criada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccumbencyResponse"
+
+  /cases/{id}/succumbencies/{sid}:
+    put:
+      operationId: updateSuccumbency
+      tags: [cases]
+      summary: Atualizar sucumbência
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - name: sid
+          in: path
+          required: true
+          schema:
+            type: number
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SuccumbencyInput"
+      responses:
+        "200":
+          description: Sucumbência atualizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccumbencyResponse"
+
+    delete:
+      operationId: deleteSuccumbency
+      tags: [cases]
+      summary: Remover sucumbência
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+        - name: sid
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          $ref: "#/components/responses/OkResponse"
+
+  # ============================================================
+  # CRITERIA — Critérios e Regras
+  # ============================================================
+
+  /criteria:
+    get:
+      operationId: listCriteria
+      tags: [criteria]
+      summary: Listar critérios monetários
+      responses:
+        "200":
+          description: Lista de critérios
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CriteriaListResponse"
+
+  /criteria/{id}:
+    get:
+      operationId: getCriteria
+      tags: [criteria]
+      summary: Obter critério com regras
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          description: Critério encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CriteriaDetailResponse"
+
+  /criteria/interest-rules:
+    get:
+      operationId: listInterestRules
+      tags: [criteria]
+      summary: Listar regras de juros moratórios
+      responses:
+        "200":
+          description: Lista de regras de juros
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InterestRulesResponse"
+
+  /criteria/currencies:
+    get:
+      operationId: listCurrencyTransitions
+      tags: [criteria]
+      summary: Listar transições monetárias históricas do Brasil
+      responses:
+        "200":
+          description: Transições monetárias
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrencyTransitionsResponse"
+
+  # ============================================================
+  # INDEXES — Índices econômicos
+  # ============================================================
+
+  /indexes:
+    get:
+      operationId: listIndexes
+      tags: [indexes]
+      summary: Listar índices em cache
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+        - name: period
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Índices em cache
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IndexListResponse"
+
+  /indexes/sync:
+    post:
+      operationId: syncIndexes
+      tags: [indexes]
+      summary: Sincronizar índices com IBGE/BCB
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SyncIndexesInput"
+      responses:
+        "200":
+          description: Sincronização concluída
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SyncIndexesResponse"
+
+# ============================================================
+# COMPONENTS
+# ============================================================
+
+components:
+  parameters:
+    CaseId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: number
+    PartyId:
+      name: partyId
+      in: path
+      required: true
+      schema:
+        type: number
+
+  responses:
+    OkResponse:
+      description: Operação bem-sucedida
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/OkResponse"
+    Error:
+      description: Erro interno
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    NotFound:
+      description: Não encontrado
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+        timestamp:
+          type: string
+
+    OkResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+
+    # ── Case ─────────────────────────────────────────────────────────────────
+
+    CalculationCase:
+      type: object
+      properties:
+        id:
+          type: number
+        publicKey:
+          type: string
+        status:
+          type: string
+          enum: [draft, in_progress, computed, finalized, report_generated]
+        integrityHash:
+          type: string
+          nullable: true
+        computedAt:
+          type: string
+          nullable: true
+        version:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+
+    CreateCaseResponse:
+      type: object
+      properties:
+        case:
+          $ref: "#/components/schemas/CalculationCase"
+        publicKey:
+          type: string
+
+    CaseListResponse:
+      type: object
+      properties:
+        cases:
+          type: array
+          items:
+            $ref: "#/components/schemas/CalculationCase"
+
+    ProcessData:
+      type: object
+      properties:
+        id:
+          type: number
+        caseId:
+          type: number
+        forPaymentRequest:
+          type: boolean
+        processNumber:
+          type: string
+          nullable: true
+        claimant:
+          type: string
+          nullable: true
+        defendant:
+          type: string
+          nullable: true
+        agreementPercentage:
+          type: string
+          nullable: true
+        generalNotes:
+          type: string
+          nullable: true
+
+    ProcessDataInput:
+      type: object
+      properties:
+        forPaymentRequest:
+          type: boolean
+        processNumber:
+          type: string
+        claimant:
+          type: string
+        defendant:
+          type: string
+        agreementPercentage:
+          type: string
+        generalNotes:
+          type: string
+
+    MonetaryConfigInput:
+      type: object
+      properties:
+        criteriaId:
+          type: number
+          nullable: true
+        baseDate:
+          type: string
+          description: "Data-base no formato YYYY-MM"
+          nullable: true
+        applySelicFrom:
+          type: string
+          nullable: true
+        selicFromCitation:
+          type: boolean
+        allowDeflation:
+          type: boolean
+
+    InterestConfigInput:
+      type: object
+      properties:
+        interestRuleId:
+          type: number
+          nullable: true
+        startDate:
+          type: string
+          nullable: true
+        startEvent:
+          type: string
+          description: "citacao | vencimento | ajuizamento"
+
+    FeesInput:
+      type: object
+      properties:
+        feesType:
+          type: string
+          enum: [succumbential, enforcement]
+        scaledForPublicEntity:
+          type: boolean
+        calcMode:
+          type: string
+          enum: [none, condemnation_value, cause_value, fixed_value, condemnation_no_discount, condemnation_with_discount_limit]
+        percentage:
+          type: number
+          nullable: true
+        fixedValue:
+          type: number
+          nullable: true
+        discountLimit:
+          type: number
+          nullable: true
+        scalingRanges:
+          type: array
+          nullable: true
+          items:
+            type: object
+            properties:
+              upTo:
+                type: number
+              percentage:
+                type: number
+
+    Fees:
+      type: object
+      properties:
+        id:
+          type: number
+        caseId:
+          type: number
+        feesType:
+          type: string
+        scaledForPublicEntity:
+          type: boolean
+        calcMode:
+          type: string
+        percentage:
+          type: string
+          nullable: true
+        computedAmount:
+          type: string
+          nullable: true
+
+    FinalMetadataInput:
+      type: object
+      properties:
+        preparedBy:
+          type: string
+          nullable: true
+        institution:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        stateUf:
+          type: string
+          nullable: true
+        finalNotes:
+          type: string
+          nullable: true
+
+    ComputeResult:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        grandTotalGross:
+          type: number
+        partyResults:
+          type: array
+          items:
+            type: object
+            properties:
+              partyId:
+                type: number
+              name:
+                type: string
+              totalUpdated:
+                type: number
+
+    CaseReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: number
+        html:
+          type: string
+        totalGross:
+          type: number
+        totalNet:
+          type: number
+
+    CaseFull:
+      type: object
+      properties:
+        case:
+          $ref: "#/components/schemas/CalculationCase"
+        processData:
+          $ref: "#/components/schemas/ProcessData"
+          nullable: true
+        monetaryConfig:
+          type: object
+          nullable: true
+        interestConfig:
+          type: object
+          nullable: true
+        parties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PartyWithInstallments"
+        fees:
+          type: array
+          items:
+            $ref: "#/components/schemas/Fees"
+        succumbencies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Succumbency"
+        finalMeta:
+          type: object
+          nullable: true
+
+    # ── Parties ──────────────────────────────────────────────────────────────
+
+    Party:
+      type: object
+      properties:
+        id:
+          type: number
+        caseId:
+          type: number
+        name:
+          type: string
+        cpfCnpj:
+          type: string
+          nullable: true
+        contractualFeesPct:
+          type: string
+          nullable: true
+        contractualFeesBeneficiaryCpfCnpj:
+          type: string
+          nullable: true
+        pssMode:
+          type: string
+        totalPrincipal:
+          type: string
+          nullable: true
+        totalInterest:
+          type: string
+          nullable: true
+        totalSelic:
+          type: string
+          nullable: true
+        totalUpdated:
+          type: string
+          nullable: true
+        installmentCount:
+          type: number
+        discountCount:
+          type: number
+        sortOrder:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+
+    PartyWithInstallments:
+      allOf:
+        - $ref: "#/components/schemas/Party"
+        - type: object
+          properties:
+            installments:
+              type: array
+              items:
+                $ref: "#/components/schemas/Installment"
+            discounts:
+              type: array
+              items:
+                $ref: "#/components/schemas/Discount"
+
+    PartyInput:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+        cpfCnpj:
+          type: string
+          nullable: true
+        contractualFeesPct:
+          type: number
+          nullable: true
+        contractualFeesBeneficiaryCpfCnpj:
+          type: string
+          nullable: true
+        pssMode:
+          type: string
+
+    PartyListResponse:
+      type: object
+      properties:
+        parties:
+          type: array
+          items:
+            $ref: "#/components/schemas/Party"
+
+    PartyResponse:
+      type: object
+      properties:
+        party:
+          $ref: "#/components/schemas/Party"
+
+    # ── Installments ─────────────────────────────────────────────────────────
+
+    Installment:
+      type: object
+      properties:
+        id:
+          type: number
+        partyId:
+          type: number
+        period:
+          type: string
+          description: "YYYY-MM"
+        principalAmount:
+          type: string
+        selicAmount:
+          type: string
+          nullable: true
+        interestAmount:
+          type: string
+          nullable: true
+        fixedInterestFrom:
+          type: string
+          nullable: true
+        originalCurrency:
+          type: string
+          description: "Código da moeda original (BRL, CR2, CZL, etc.)"
+        updatedPrincipal:
+          type: string
+          nullable: true
+        updatedInterest:
+          type: string
+          nullable: true
+        updatedSelic:
+          type: string
+          nullable: true
+        totalUpdated:
+          type: string
+          nullable: true
+        accumulatedFactor:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [pending, computed, error]
+        notes:
+          type: string
+          nullable: true
+        sortOrder:
+          type: number
+
+    InstallmentInput:
+      type: object
+      required: [period, principalAmount]
+      properties:
+        period:
+          type: string
+          description: "YYYY-MM"
+        principalAmount:
+          type: number
+        selicAmount:
+          type: number
+          nullable: true
+        interestAmount:
+          type: number
+          nullable: true
+        fixedInterestFrom:
+          type: string
+          nullable: true
+        originalCurrency:
+          type: string
+          nullable: true
+        notes:
+          type: string
+          nullable: true
+
+    CreateInstallmentsInput:
+      type: object
+      properties:
+        period:
+          type: string
+          description: "Para inserção individual"
+        principalAmount:
+          type: number
+          description: "Para inserção individual"
+        selicAmount:
+          type: number
+          nullable: true
+        interestAmount:
+          type: number
+          nullable: true
+        fixedInterestFrom:
+          type: string
+          nullable: true
+        notes:
+          type: string
+          nullable: true
+        installments:
+          type: array
+          description: "Para inserção em lote"
+          items:
+            $ref: "#/components/schemas/InstallmentInput"
+
+    InstallmentListResponse:
+      type: object
+      properties:
+        installments:
+          type: array
+          items:
+            $ref: "#/components/schemas/Installment"
+
+    InstallmentResponse:
+      type: object
+      properties:
+        installment:
+          $ref: "#/components/schemas/Installment"
+
+    # ── Discounts ─────────────────────────────────────────────────────────────
+
+    Discount:
+      type: object
+      properties:
+        id:
+          type: number
+        partyId:
+          type: number
+        description:
+          type: string
+        amount:
+          type: string
+        date:
+          type: string
+          nullable: true
+        notes:
+          type: string
+          nullable: true
+        sortOrder:
+          type: number
+
+    DiscountInput:
+      type: object
+      required: [description, amount]
+      properties:
+        description:
+          type: string
+        amount:
+          type: number
+        date:
+          type: string
+          nullable: true
+        notes:
+          type: string
+          nullable: true
+
+    DiscountListResponse:
+      type: object
+      properties:
+        discounts:
+          type: array
+          items:
+            $ref: "#/components/schemas/Discount"
+
+    DiscountResponse:
+      type: object
+      properties:
+        discount:
+          $ref: "#/components/schemas/Discount"
+
+    # ── Succumbencies ─────────────────────────────────────────────────────────
+
+    Succumbency:
+      type: object
+      properties:
+        id:
+          type: number
+        caseId:
+          type: number
+        type:
+          type: string
+        cpfCnpj:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        date:
+          type: string
+          nullable: true
+        amount:
+          type: string
+        apply10PctFine:
+          type: boolean
+        apply10PctFees:
+          type: boolean
+        useAlternativeCriteria:
+          type: boolean
+        computedAmount:
+          type: string
+          nullable: true
+        sortOrder:
+          type: number
+
+    SuccumbencyInput:
+      type: object
+      required: [type, amount]
+      properties:
+        type:
+          type: string
+        cpfCnpj:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        date:
+          type: string
+          nullable: true
+        amount:
+          type: number
+        apply10PctFine:
+          type: boolean
+        apply10PctFees:
+          type: boolean
+        useAlternativeCriteria:
+          type: boolean
+        alternativeCriteriaId:
+          type: number
+          nullable: true
+
+    SuccumbencyListResponse:
+      type: object
+      properties:
+        succumbencies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Succumbency"
+
+    SuccumbencyResponse:
+      type: object
+      properties:
+        succumbency:
+          $ref: "#/components/schemas/Succumbency"
+
+    # ── Criteria ──────────────────────────────────────────────────────────────
+
+    MonetaryCriteriaRule:
+      type: object
+      properties:
+        id:
+          type: number
+        criteriaId:
+          type: number
+        indexCode:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        legalBasis:
+          type: string
+          nullable: true
+        sortOrder:
+          type: number
+
+    MonetaryCriteria:
+      type: object
+      properties:
+        id:
+          type: number
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        hasSelic:
+          type: boolean
+        hasSelicAfterCitation:
+          type: boolean
+        selicStartDate:
+          type: string
+          nullable: true
+        allowDeflation:
+          type: boolean
+        isActive:
+          type: boolean
+        sortOrder:
+          type: number
+        notes:
+          type: string
+          nullable: true
+        rules:
+          type: array
+          items:
+            $ref: "#/components/schemas/MonetaryCriteriaRule"
+
+    CriteriaListResponse:
+      type: object
+      properties:
+        criteria:
+          type: array
+          items:
+            $ref: "#/components/schemas/MonetaryCriteria"
+
+    CriteriaDetailResponse:
+      type: object
+      properties:
+        criteria:
+          $ref: "#/components/schemas/MonetaryCriteria"
+
+    InterestRule:
+      type: object
+      properties:
+        id:
+          type: number
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        interestType:
+          type: string
+        annualRate:
+          type: string
+          nullable: true
+        monthlyRate:
+          type: string
+          nullable: true
+        legalBasis:
+          type: string
+          nullable: true
+        sortOrder:
+          type: number
+        notes:
+          type: string
+          nullable: true
+
+    InterestRulesResponse:
+      type: object
+      properties:
+        rules:
+          type: array
+          items:
+            $ref: "#/components/schemas/InterestRule"
+
+    CurrencyTransition:
+      type: object
+      properties:
+        id:
+          type: number
+        fromCurrency:
+          type: string
+        toCurrency:
+          type: string
+        effectiveDate:
+          type: string
+        conversionFactor:
+          type: string
+        factorType:
+          type: string
+        legalNote:
+          type: string
+          nullable: true
+        technicalNote:
+          type: string
+          nullable: true
+
+    CurrencyTransitionsResponse:
+      type: object
+      properties:
+        transitions:
+          type: array
+          items:
+            $ref: "#/components/schemas/CurrencyTransition"
+
+    # ── Indexes ───────────────────────────────────────────────────────────────
+
+    IndexEntry:
+      type: object
+      properties:
+        id:
+          type: number
+        indexType:
+          type: string
+        period:
+          type: string
+        rate:
+          type: string
+        source:
+          type: string
+        fetchedAt:
+          type: string
+
+    IndexListResponse:
+      type: object
+      properties:
+        indexes:
+          type: array
+          items:
+            $ref: "#/components/schemas/IndexEntry"
+        total:
+          type: number
+
+    SyncIndexesInput:
+      type: object
+      properties:
+        indexTypes:
+          type: array
+          items:
+            type: string
+        startPeriod:
+          type: string
+        endPeriod:
+          type: string
+
+    SyncIndexesResponse:
+      type: object
+      properties:
+        synced:
+          type: number
+        errors:
+          type: array
+          items:
+            type: string

@@ -1,0 +1,16 @@
+packages:
+  "framer-motion": "For elegant page transitions and wizard step animations"
+  "lucide-react": "For crisp, professional iconography"
+  "clsx": "For conditional class merging"
+  "tailwind-merge": "For reliable class composition"
+  "date-fns": "For date formatting"
+images:
+  - path: "client/public/images/legal-bg.png"
+    description: "Elegant, sophisticated dark navy background with subtle geometric gold lines, representing scales of justice abstractly, premium luxury legal aesthetic"
+    aspect_ratio: "16:9"
+  - path: "client/public/images/logo-icon.png"
+    description: "Minimalist, flat geometric icon of the scales of justice in solid gold color, transparent background, highly professional and luxury"
+    aspect_ratio: "1:1"
+notes:
+  - "Using a luxury/refined aesthetic with Playfair Display and deep navy/gold colors"
+  - "Wizard steps are encapsulated in a single complex page component to ensure completeness"
