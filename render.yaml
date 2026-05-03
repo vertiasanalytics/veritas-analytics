@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: veritas-analytics
+    runtime: node
+    buildCommand: corepack enable && pnpm install && pnpm --filter @workspace/calc-federal run build && pnpm --filter @workspace/api-server run build
+    startCommand: node artifacts/api-server/dist/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20.18.0
