@@ -1,0 +1,15 @@
+[phases.install]
+nixPkgs = ["nodejs_20", "corepack"]
+
+[phases.setup]
+cmds = ["corepack enable"]
+
+[phases.build]
+cmds = [
+  "pnpm install --frozen-lockfile",
+  "pnpm --filter @workspace/calc-federal run build",
+  "pnpm --filter @workspace/api-server run build"
+]
+
+[start]
+cmd = "node artifacts/api-server/dist/index.cjs"
